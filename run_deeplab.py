@@ -7,6 +7,8 @@ from PIL import Image
 
 from models.deeplab.train import *
 from models.deeplab.evaluate import *
+from models.deeplab.train_B import *
+
 
 def main():
     parser = argparse.ArgumentParser(description="DeeplabV3+ And Evaluation")
@@ -18,10 +20,10 @@ def main():
                         help='backbone name (default: resnet)')
     parser.add_argument('--out-stride', type=int, default=16,
                         help='network output stride (default: 8)')
-    parser.add_argument('--dataset', type=str, default='urban3d',
+    parser.add_argument('--dataset', type=str, default='crowdAI',
                         choices=['urban3d', 'spaceNet', 'crowdAI', 'combined'],
                         help='dataset name (default: urban3d)')
-    parser.add_argument('--data-root', type=str, default='/data/',
+    parser.add_argument('--data-root', type=str, default='./data/',
                         help='datasets root path')
     parser.add_argument('--workers', type=int, default=4,
                         metavar='N', help='dataloader threads')
@@ -75,7 +77,7 @@ def main():
 
     # evaluation option
     parser.add_argument('--no-val', action='store_true', default=False,
-                        help='skip validation during training')
+                        help='skp validation during training')
     parser.add_argument('--use-wandb', action='store_true', default=False)
 
     parser.add_argument('--resume', type=str, default=None, help='experiment to load')

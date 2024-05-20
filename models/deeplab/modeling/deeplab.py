@@ -5,6 +5,8 @@ from models.deeplab.modeling.sync_batchnorm.batchnorm import SynchronizedBatchNo
 from models.deeplab.modeling.aspp import build_aspp
 from models.deeplab.modeling.decoder import build_decoder
 from models.deeplab.modeling.backbone import build_backbone
+from models.deeplab.modeling.feedformerdecoder import build_feedformer_decoder
+
 
 class DeepLab(nn.Module):
     def __init__(self, backbone='resnet', output_stride=16, num_classes=21,

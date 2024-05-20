@@ -40,7 +40,7 @@ def build_test_dataloader(args, transforms):
     elif args.dataset == "spaceNet":
         return SpaceNetDataset(os.path.join(args.data_root, "SpaceNet/Vegas/test"), None, transforms)
     elif args.dataset == "crowdAI":
-        return CrowdAIDataset(os.path.join(args.data_root, "AICrowd/test"), None, transforms)
+        return CrowdAIDataset(os.path.join(args.data_root, "AICrowd/val"), None, transforms)
     elif args.dataset == "numpy":
         return NumpyDataset(args.input_filename, args.window_size, args.stride, transforms)
     else:

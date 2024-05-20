@@ -117,4 +117,6 @@ if __name__ == "__main__":
         processor.process()
 
     """
+    processor = Processor("./data/AICrowd/train/", 10, 7.5, 20)
+    processor.process()
     pass

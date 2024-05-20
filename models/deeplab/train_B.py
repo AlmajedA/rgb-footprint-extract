@@ -22,7 +22,9 @@ from models.utils.custom_transforms import tensor_resize
 
 from datasets import build_dataloader
 
-class Trainer(object):
+from models.deeplab.modeling.sobel import Sobel
+
+class Trainer_B(object):
     def __init__(self, args):
         self.args = args
 
@@ -67,6 +69,7 @@ class Trainer(object):
                         dropout_low=args.dropout[0],
                         dropout_high=args.dropout[1],
                     )
+
 
         train_params = [{'params': model.get_1x_lr_params(), 'lr': args.lr},
                         {'params': model.get_10x_lr_params(), 'lr': args.lr * 10}]
